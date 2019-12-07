@@ -1,0 +1,32 @@
+
+  <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2>Students List</h2>
+        <button mat-raised-button color="primary" (click)="addStudent()">Add</button>
+
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Student name</th>
+              <th>GPA</th>
+              <th>Age</th>
+              <th>ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{student.studentName}}</td>
+              <td> {{student.gpa}}</td>
+              <td> {{student.age}}</td>
+              <td> {{student.studentsID}}</td>
+              <td><button mat-raised-button (click)="deleteStudent(student.studentsID)" color="warn">Delete</button>
+                  <button mat-stroked-button (click)="updateStudent(student.studentsID)" style="margin-left: 15px">Update</button>
+                  <button mat-raised-button (click)="viewDetails(student.studentsID)" color="primary" style="margin-left: 15px">Details</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

@@ -1,0 +1,29 @@
+<h3> Add Student</h3>
+<div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Student Name*:</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="students.studentName" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="gpa">GPA*:</label>
+        <input type="number"  min="0" max="4" step="0.1" value="0.00" class="form-control" id="gpa" required [(ngModel)]="students.gpa" name="GPA">
+      </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number"  type="number"  required="" min="17" max="99" value="0.00" class="form-control" id="age" required [(ngModel)]="students.age" name="age">
+    </div>
+ 
+    <div class="form-group">
+        <label for="id"> ID*:</label>
+        <input type="number"  class="form-control" id="id" required [(ngModel)]="students.studentsID" name="id">
+      </div>
+      <button mat-raised-button color="primary" type="submit">Add</button>
+  </form>
+</div>
+
+
+<div [hidden]="!submitted">
+  <h4>Student have been inserted </h4>
+</div>
